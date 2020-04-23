@@ -11,6 +11,16 @@ pool:
   vmImage: 'macos-latest'
 
 steps:
+- task: AndroidSigning@3
+  inputs:
+    apkFiles: '**/*.apk'
+    apksign: true
+    apksignerKeystoreFile: 'production.jks'
+    apksignerKeystorePassword: $(keystore.password)
+    apksignerKeystoreAlias: $(key.alias)
+    apksignerKeyPassword: $(key.password)
+    zipalign: false
+
 - task: Gradle@2
   inputs:
     workingDirectory: ''
@@ -22,17 +32,7 @@ steps:
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'assembleRelease'
-
-- task: AndroidSigning@3
-  inputs:
-    apkFiles: '**/*.apk'
-    apksign: true
-    apksignerKeystoreFile: 'production.jks'
-    apksignerKeystorePassword: $(keystore.password)
-    apksignerKeystoreAlias: $(key.alias)
-    apksignerKeyPassword: $(key.password)
-    zipalign: false
-
+    
 - task: CopyFiles@2
   inputs:
     SourceFolder: $(Build.SourcesDirectory)
