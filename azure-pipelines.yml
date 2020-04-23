@@ -50,7 +50,7 @@ steps:
 
     apksignerKeyPassword: $(key.password)
 
-    apksignerArguments: --out $(Build.SourcesDirectory)/app/build/outputs/apk/release/android-devops.release.apk
+    apksignerArguments: --out $(Build.SourcesDirectory)/app/build/outputs/apk/release/android-devops.apk
 
     zipalign: false
 
@@ -60,7 +60,7 @@ steps:
 
     SourceFolder: $(Build.SourcesDirectory)
 
-    contents: '**/*.release.apk' 
+    contents: '**/*.apk' 
 
     targetFolder: '$(build.artifactStagingDirectory)'
 
