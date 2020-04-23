@@ -37,11 +37,11 @@ steps:
   inputs:
     SourceFolder: $(Build.SourcesDirectory)
     contents: '**/*.release.apk'
-    targetFolder: '$(build.artifactStagingDirectory)'
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
     overWrite: true
 
 - task: PublishBuildArtifacts@1
   inputs:
-    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    artifactName: 'outputs'
-    artifactType: 'container'
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)/app/build/outputs/apk/release/'
+    artifactName: 'apks'
+    publishLocation: 'container'
