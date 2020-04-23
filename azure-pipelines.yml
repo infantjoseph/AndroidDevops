@@ -39,3 +39,9 @@ steps:
     contents: '**/*.release.apk'
     targetFolder: '$(Build.ArtifactStagingDirectory)'
     overWrite: true
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: '$(build.artifactStagingDirectory)'
+    artifactName: 'outputs'
+    artifactType: 'container'
