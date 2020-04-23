@@ -37,5 +37,5 @@ steps:
   inputs:
     SourceFolder: $(Build.SourcesDirectory)
     contents: '**/*.release.apk'
-    targetFolder: '$(build.artifactStagingDirectory)'
+    targetFolder: '$(build.artifactStagingDirectory)/app/build/outputs/apk/release/'
     overWrite: true
