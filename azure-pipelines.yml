@@ -23,7 +23,9 @@ steps:
 - task: AndroidSigning@3
   inputs:
     apkFiles: '**/*.apk'
+    apksign: true
     apksignerKeystoreFile: 'production.jks'
     apksignerKeystorePassword: 'keystorepwd'
     apksignerKeystoreAlias: 'key0'
     apksignerKeyPassword: 'aliaspwd'
+    zipalign: false
