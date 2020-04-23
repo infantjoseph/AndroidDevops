@@ -15,9 +15,8 @@ steps:
   inputs:
     apkFiles: '**/*.apk'
     apksign: true
-    apksignerKeystoreFile: '$(production.jks)'
+    apksignerKeystoreFile: 'production.jks'
     apksignerKeystorePassword: $(keystore.password)
     apksignerKeystoreAlias: $(key.alias)
     apksignerKeyPassword: $(key.password)
-    apksignerArguments: --out $(Build.SourcesDirectory)/app/build/outputs/apk/release/android-devops.release.apk
-    zipalign: true
+    zipalign: false
