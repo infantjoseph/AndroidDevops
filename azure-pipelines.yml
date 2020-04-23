@@ -37,7 +37,7 @@ steps:
   inputs:
     SourceFolder: $(Build.SourcesDirectory)
     contents: '**/*.apk'
-    targetFolder: '$(Build.ArtifactStagingDirectory)'
+    targetFolder: '$(Build.ArtifactStagingDirectory)/app/build/outputs/apk/release/android-devops.apk'
     overWrite: true
 
 - task: PublishBuildArtifacts@1
