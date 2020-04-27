@@ -80,7 +80,7 @@ steps:
     npm init --yes
     npm install -g firebase-tools
     npm install
-    firebase appdistribution:distribute --app 1:58067290385:android:9bcc036cb25bb79353e4b0 --token "1//0gNmibrC-GUerCgYIARAAGBASNwF-L9IrhTAPBFMMx048rd_qcobOHLQaVCG6guZ5v9lv06cSPkQJxgBHWwrsHmZFYiH21RCxMhM" --release-notes "Token distribution" --testers "infantjoseph@gmail.com" $(build.artifactStagingDirectory)$(Build.ArtifactStagingDirectory)/android-devops.release.apk
+    firebase appdistribution:distribute --app 1:58067290385:android:9bcc036cb25bb79353e4b0 --token "1//0gNmibrC-GUerCgYIARAAGBASNwF-L9IrhTAPBFMMx048rd_qcobOHLQaVCG6guZ5v9lv06cSPkQJxgBHWwrsHmZFYiH21RCxMhM" --release-notes "Token distribution" --testers "infantjoseph@gmail.com" $(build.artifactStagingDirectory)$(Build.ArtifactStagingDirectory)/apks/android-devops.release.apk
     
     
   displayName: 'Firebase install and deploy'
