@@ -42,7 +42,7 @@ steps:
 
     apksign: true
 
-    apksignerKeystoreFile: $(production.jks)
+    apksignerKeystoreFile: production.jks
 
     apksignerKeystorePassword: $(keystore.password)
 
