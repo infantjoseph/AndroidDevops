@@ -65,15 +65,7 @@ steps:
     targetFolder: '$(build.artifactStagingDirectory)'
 
     overWrite: true
-- task: PublishBuildArtifacts@1
 
-  inputs:
-
-    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
-
-    artifactName: 'apks' 
-
-    publishLocation: 'container'
 
 - script: |
 
