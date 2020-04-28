@@ -50,7 +50,7 @@ steps:
 
     apksignerKeyPassword: $(key.password)
 
-    apksignerArguments: --out $(Build.SourcesDirectory)/app/build/outputs/apk/release/android-devops.release.apk
+    apksignerArguments: --out $(Build.SourcesDirectory)/android-devops.apk
 
     zipalign: false
 
@@ -60,7 +60,7 @@ steps:
 
     SourceFolder: $(Build.SourcesDirectory)
 
-    contents: '**/*.release.apk'
+    contents: '**/*.apk'
 
     targetFolder: '$(build.artifactStagingDirectory)'
 
@@ -85,6 +85,6 @@ steps:
 
     npm install
 
-    firebase appdistribution:distribute --app $(Firebase.APP_ID) --token $(Firebase.FIREBASE_TOKEN) --release-notes '$(Build.SourceVersionMessage)' --testers '$(Firebase.TESTERS)' $(build.artifactStagingDirectory)/app/build/outputs/apk/release/android-devops.release.apk
+    firebase appdistribution:distribute --app $(Firebase.APP_ID) --token $(Firebase.FIREBASE_TOKEN) --release-notes '$(Build.SourceVersionMessage)' --testers '$(Firebase.TESTERS)' $(build.artifactStagingDirectory)/android-devops.apk
       
   displayName: 'Firebase install and deploy'
