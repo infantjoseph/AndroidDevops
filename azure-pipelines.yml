@@ -32,7 +32,7 @@ steps:
 
     testResultsFiles: '**/TEST-*.xml'
 
-    tasks: 'assembleRelease'
+    tasks: 'assembleDebug'
 
 - task: AndroidSigning@3
 
