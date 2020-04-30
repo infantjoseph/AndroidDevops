@@ -71,3 +71,17 @@ steps:
 
 
 - script: echo $(notes)
+
+- script: |
+
+    cd functions
+
+    npm init --yes
+
+    npm install -g firebase-tools
+
+    npm install
+
+    firebase appdistribution:distribute --app $(Firebase.APP_ID) --token $(Firebase.FIREBASE_TOKEN) --release-notes $(notes) --testers "infantjoseph@gmail.com" $(build.artifactStagingDirectory)/android-devops.apk
+
+  displayName: 'Firebase install and deploy'
