@@ -77,6 +77,6 @@ steps:
 
     npm install
 
-    firebase appdistribution:distribute --app $(Firebase.APP_ID) --token $(Firebase.FIREBASE_TOKEN) --release-notes '$(COMMIT_MESSAGE.value)' --testers "infantjoseph@gmail.com" $(build.artifactStagingDirectory)/android-devops.apk
+    firebase appdistribution:distribute --app $(Firebase.APP_ID) --token $(Firebase.FIREBASE_TOKEN) --release-notes $(COMMIT_MESSAGE.value) --testers "infantjoseph@gmail.com" $(build.artifactStagingDirectory)/android-devops.apk
       
   displayName: 'Firebase install and deploy'
