@@ -67,8 +67,6 @@ steps:
     overWrite: true
 
 
-- script: echo $(notes)
-
 - script: |
 
     cd functions
@@ -79,6 +77,6 @@ steps:
 
     npm install
 
-    firebase appdistribution:distribute --app $(Firebase.APP_ID) --token $(Firebase.FIREBASE_TOKEN) --release-notes $(release.notes) --testers "infantjoseph@gmail.com" $(build.artifactStagingDirectory)/android-devops.apk
+    firebase appdistribution:distribute --app $(Firebase.APP_ID) --token $(Firebase.FIREBASE_TOKEN) --release-notes '$(release.notes)' --testers "infantjoseph@gmail.com" $(build.artifactStagingDirectory)/android-devops.apk
 
   displayName: 'Firebase install and deploy'
